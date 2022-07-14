@@ -1,0 +1,10 @@
+var chastTela = ["рука", "нога", "нос", "глаз", "ухо"];
+var prilagatelnoe = ["волшебная", "грязная", "восхитительная", "грязная", "милая"];
+var animalPart = ["рога", "лапа", "морда", "хвост"];
+var animal = ["окуня", "выдры", "лошади", "тюленя", "собаки"];
+var randonChastTela = chastTela[Math.floor(Math.random() * 5)];
+var randomPrilagatelnoe = prilagatelnoe[Math.floor(Math.random() * prilagatelnoe.length)];
+var randomAnimalPart = animalPart[Math.floor(Math.random() * animalPart.length)];
+var randomAnimals = animal[Math.floor(Math.random() * animal.length)];
+var results = "У тебя " +  randonChastTela + ", еще более " + randomPrilagatelnoe + ", чем " + randomAnimalPart +" у " + randomAnimals;
+results;
