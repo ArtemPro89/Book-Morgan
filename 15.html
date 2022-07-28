@@ -8,7 +8,35 @@
 </head>
 <body>
     <script>
-        var name1 = prompt("Как тебя зовут?");
+        var words = ["программа", "макака", "прекрасный", "аладушек", "чёрт", "нос"];
+        var word = words[Math.floor(Math.random() * words.length)];
+        var answerArray = [];
+        for (i = 0; i < word.length; i++) {
+            answerArray[i] = "_";
+        }
+        var remainingLetters = word.length;
+        var checkRemain = 10;
+        while (remainingLetters > 0 && checkRemain > 0) {
+            alert(answerArray.join(" "));
+            var guess = prompt("Введите букву или нажмите отмена для выхода").toLowerCase();
+            checkRemain--;
+            if (guess === null) {
+                break;
+            } else if (guess.length !== 1) {
+                alert("Введите только одну букву");
+            } else {
+                for (j = 0; j < word.length; j++) {
+                    if (word[j] === guess) {
+                        answerArray[j] = guess;
+                        remainingLetters--;
+                    }
+                }
+            }
+        }
+        if (answerArray.join("") === word) {
+        alert(answerArray.join(" "));
+        alert("Поздравляю! Вы победили!");
+        } else {alert("Игра окончена")}
     </script>
 </body>
 </html>
